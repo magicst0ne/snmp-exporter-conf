@@ -87,7 +87,7 @@ dell:
       2: unknown
       3: "off"
       4: "on"
-  - name: systemPowerUpTime
+  - name: sysUpTime
     oid: 1.3.6.1.4.1.674.10892.5.2.5
     type: gauge
     help: This attribute defines the power-up time of the system in seconds. - 1.3.6.1.4.1.674.10892.5.2.5
