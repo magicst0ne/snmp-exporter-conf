@@ -1,0 +1,38 @@
+modules:
+  # hpe ilo
+  hpe:
+    auth:
+      community: public
+    walk:
+      # System Information Group
+      - cpqSiProductName   #sysModelName
+      - cpqSiSysProductId  #sysSystemID
+      - cpqSiSysSerialNum  #sysServiceTag
+      - cpqSiAssetTag      #sysAssetTag
+      - cpqSeSysRomVer     #sysFirmwareVersion
+      - sysUpTime          #sysUpTime
+
+      # Status Group
+      - cpqHeMibCondition                 #Overall system health status
+
+
+      # CPU Memory Information Group
+      - cpqSeCpuName
+      - cpqSeCpuSpeed
+      - cpqSeCpuCore
+      - cpqSeCPUCoreMaxThreads
+      - cpqSeTotalMem
+
+      #psu temp fan 
+      - cpqHeFltTolPowerSupplyCondition   #Power supply status
+      - cpqHeTemperatureCondition         #Temperature status
+      - cpqHeTemperatureCelsius           #Temperature
+      - cpqHeFltTolFanCondition           #Fan status
+
+      # Disk Status
+      - cpqDaAccelStatus                  #Disk array cache controller status
+      - cpqDaAccelBattery                 #Disk array cache controller battery status
+      - cpqDaCntlrCondition               #Disk array controller state
+      - cpqDaPhyDrvStatus                 #Physical Drive Status
+      - cpqDaPhyDrvSmartStatus            #Physical disk S.M.A.R.T. Status
+      - cpqDaLogDrvStatus                 #Logical Drive Status

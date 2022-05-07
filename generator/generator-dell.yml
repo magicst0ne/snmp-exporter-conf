@@ -1,0 +1,78 @@
+modules:
+# dell idrac
+  dell:
+    auth:
+      community: HardWare
+    walk:
+      # System Information Group
+      - systemModelName     #sysModelName
+      - systemSystemID      #sysSystemID
+      - systemServiceTag    #sysServiceTag
+      - systemAssetTag      #sysAssetTag
+      - racFirmwareVersion  #sysFirmwareVersion
+      - systemPowerUpTime   #sysUpTime
+
+      # Status Group
+      - globalSystemStatus
+      - globalStorageStatus
+      - systemPowerState
+      - systemBatteryStatus
+      - systemStateGlobalSystemStatus                 
+      - systemStateChassisState                       
+      - systemStateChassisStatus
+
+
+      # CPU Memory Information Group
+      - processorDeviceStatusStatus           
+      - processorDeviceStatusReading          
+      - processorDeviceStatusLocationName     
+
+      - memoryDeviceManufacturerName
+      - memoryDeviceStatus                 
+      - memoryDeviceType                       
+      - memoryDeviceSize                   
+      - memoryDeviceSpeed
+
+      #psu temp fan 
+      - powerSupplyStatus                #Power supply status
+      - temperatureProbeStatus           #Temperature status
+      - temperatureProbeReading          #Temperature
+      - coolingDeviceStatus              #Fan status
+      - coolingDeviceReading             #Fan speed
+      - coolingDeviceLocationName        #Fan Location Name
+
+      # Disk Status
+      - controllerComponentStatus        #Disk array controller status
+      - batteryState                     #Disk array cache controller battery status
+      - physicalDiskComponentStatus      #Physical Drive Status
+      - virtualDiskState                 #Logical Drive Status
+      
+
+    version: 2
+    max_repetitions: 25
+    retries: 3
+    timeout: 60s
+
+    overrides:
+      # System Information Group
+      racManufacturer:
+        type: DisplayString
+      racVersion:
+        type: DisplayString
+      racFirmwareVersion:
+        type: DisplayString
+      systemServiceTag:
+        type: DisplayString
+      systemModelName:
+        type: DisplayString
+      systemSystemID:
+        type: DisplayString
+
+      temperatureProbeLocationName:
+        type: DisplayString
+      processorDeviceStatusLocationName:
+        type: DisplayString
+      memoryDeviceManufacturerName:
+        type: DisplayString
+      coolingDeviceLocationName:
+        type: DisplayString

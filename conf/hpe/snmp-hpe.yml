@@ -1,0 +1,259 @@
+# WARNING: This file was auto-generated using snmp_exporter generator, manual changes will be lost.
+hpe:
+  walk:
+  - 1.3.6.1.4.1.232.1.2.2.1.1.15
+  - 1.3.6.1.4.1.232.1.2.2.1.1.25
+  - 1.3.6.1.4.1.232.1.2.2.1.1.3
+  - 1.3.6.1.4.1.232.1.2.2.1.1.4
+  - 1.3.6.1.4.1.232.3.2.2.1.1.6
+  - 1.3.6.1.4.1.232.3.2.2.2.1.2
+  - 1.3.6.1.4.1.232.3.2.2.2.1.6
+  - 1.3.6.1.4.1.232.3.2.3.1.1.4
+  - 1.3.6.1.4.1.232.3.2.5.1.1.57
+  - 1.3.6.1.4.1.232.3.2.5.1.1.6
+  - 1.3.6.1.4.1.232.6.2.6.7.1.9
+  - 1.3.6.1.4.1.232.6.2.6.8.1.4
+  - 1.3.6.1.4.1.232.6.2.6.8.1.6
+  - 1.3.6.1.4.1.232.6.2.9.3.1.4
+  get:
+  - 1.3.6.1.2.1.1.3.0
+  - 1.3.6.1.4.1.232.1.2.3.2.0
+  - 1.3.6.1.4.1.232.1.2.6.1.0
+  - 1.3.6.1.4.1.232.2.2.2.1.0
+  - 1.3.6.1.4.1.232.2.2.2.3.0
+  - 1.3.6.1.4.1.232.2.2.2.6.0
+  - 1.3.6.1.4.1.232.2.2.4.2.0
+  - 1.3.6.1.4.1.232.6.1.3.0
+  metrics:
+  - name: sysUpTime
+    oid: 1.3.6.1.2.1.1.3
+    type: gauge
+    help: ' - 1.3.6.1.2.1.1.3'
+  - name: cpqSeCpuCore
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.15
+    type: gauge
+    help: The number of cores in this CPU module - 1.3.6.1.4.1.232.1.2.2.1.1.15
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCPUCoreMaxThreads
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.25
+    type: gauge
+    help: This OID indicates the maximum number of threads that a cpu core is capable
+      of. - 1.3.6.1.4.1.232.1.2.2.1.1.25
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuName
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.3
+    type: DisplayString
+    help: The name of this processor - 1.3.6.1.4.1.232.1.2.2.1.1.3
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeCpuSpeed
+    oid: 1.3.6.1.4.1.232.1.2.2.1.1.4
+    type: gauge
+    help: The current internal speed of this processor in megahertz - 1.3.6.1.4.1.232.1.2.2.1.1.4
+    indexes:
+    - labelname: cpqSeCpuUnitIndex
+      type: gauge
+  - name: cpqSeTotalMem
+    oid: 1.3.6.1.4.1.232.1.2.3.2
+    type: gauge
+    help: The total amount of memory in kilobytes - 1.3.6.1.4.1.232.1.2.3.2
+  - name: cpqSeSysRomVer
+    oid: 1.3.6.1.4.1.232.1.2.6.1
+    type: DisplayString
+    help: System ROM version information. - 1.3.6.1.4.1.232.1.2.6.1
+  - name: cpqSiSysSerialNum
+    oid: 1.3.6.1.4.1.232.2.2.2.1
+    type: DisplayString
+    help: The serial number of the physical system unit - 1.3.6.1.4.1.232.2.2.2.1
+  - name: cpqSiAssetTag
+    oid: 1.3.6.1.4.1.232.2.2.2.3
+    type: DisplayString
+    help: The customer changeable identifier that is set to the system serial number
+      at the time of manufacture - 1.3.6.1.4.1.232.2.2.2.3
+  - name: cpqSiSysProductId
+    oid: 1.3.6.1.4.1.232.2.2.2.6
+    type: DisplayString
+    help: The product id string of the system unit - 1.3.6.1.4.1.232.2.2.2.6
+  - name: cpqSiProductName
+    oid: 1.3.6.1.4.1.232.2.2.4.2
+    type: DisplayString
+    help: The machine product name - 1.3.6.1.4.1.232.2.2.4.2
+  - name: cpqDaCntlrCondition
+    oid: 1.3.6.1.4.1.232.3.2.2.1.1.6
+    type: gauge
+    help: The condition of the device - 1.3.6.1.4.1.232.3.2.2.1.1.6
+    indexes:
+    - labelname: cpqDaCntlrIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: degraded
+      4: failed
+  - name: cpqDaAccelStatus
+    oid: 1.3.6.1.4.1.232.3.2.2.2.1.2
+    type: gauge
+    help: Cache Module/Operations Status - 1.3.6.1.4.1.232.3.2.2.2.1.2
+    indexes:
+    - labelname: cpqDaAccelCntlrIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: invalid
+      3: enabled
+      4: tmpDisabled
+      5: permDisabled
+      6: cacheModFlashMemNotAttached
+      7: cacheModDegradedFailsafeSpeed
+      8: cacheModCriticalFailure
+      9: cacheReadCacheNotMapped
+  - name: cpqDaAccelBattery
+    oid: 1.3.6.1.4.1.232.3.2.2.2.1.6
+    type: gauge
+    help: Cache Module Board Backup Power Status - 1.3.6.1.4.1.232.3.2.2.2.1.6
+    indexes:
+    - labelname: cpqDaAccelCntlrIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: recharging
+      4: failed
+      5: degraded
+      6: notPresent
+      7: capacitorFailed
+  - name: cpqDaLogDrvStatus
+    oid: 1.3.6.1.4.1.232.3.2.3.1.1.4
+    type: gauge
+    help: Logical Drive Status - 1.3.6.1.4.1.232.3.2.3.1.1.4
+    indexes:
+    - labelname: cpqDaLogDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaLogDrvIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: failed
+      4: unconfigured
+      5: recovering
+      6: readyForRebuild
+      7: rebuilding
+      8: wrongDrive
+      9: badConnect
+      10: overheating
+      11: shutdown
+      12: expanding
+      13: notAvailable
+      14: queuedForExpansion
+      15: multipathAccessDegraded
+      16: erasing
+      17: predictiveSpareRebuildReady
+      18: rapidParityInitInProgress
+      19: rapidParityInitPending
+      20: noAccessEncryptedNoCntlrKey
+      21: unencryptedToEncryptedInProgress
+      22: newLogDrvKeyRekeyInProgress
+      23: noAccessEncryptedCntlrEncryptnNotEnbld
+      24: unencryptedToEncryptedNotStarted
+      25: newLogDrvKeyRekeyRequestReceived
+  - name: cpqDaPhyDrvSmartStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.57
+    type: gauge
+    help: Physical Drive S.M.A.R.T Status - 1.3.6.1.4.1.232.3.2.5.1.1.57
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: replaceDrive
+      4: replaceDriveSSDWearOut
+  - name: cpqDaPhyDrvStatus
+    oid: 1.3.6.1.4.1.232.3.2.5.1.1.6
+    type: gauge
+    help: Physical Drive Status - 1.3.6.1.4.1.232.3.2.5.1.1.6
+    indexes:
+    - labelname: cpqDaPhyDrvCntlrIndex
+      type: gauge
+    - labelname: cpqDaPhyDrvIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: failed
+      4: predictiveFailure
+      5: erasing
+      6: eraseDone
+      7: eraseQueued
+      8: ssdWearOut
+      9: notAuthenticated
+  - name: cpqHeMibCondition
+    oid: 1.3.6.1.4.1.232.6.1.3
+    type: gauge
+    help: The overall condition - 1.3.6.1.4.1.232.6.1.3
+    enum_values:
+      1: other
+      2: ok
+      3: degraded
+      4: failed
+  - name: cpqHeFltTolFanCondition
+    oid: 1.3.6.1.4.1.232.6.2.6.7.1.9
+    type: gauge
+    help: The condition of the fan - 1.3.6.1.4.1.232.6.2.6.7.1.9
+    indexes:
+    - labelname: cpqHeFltTolFanChassis
+      type: gauge
+    - labelname: cpqHeFltTolFanIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: degraded
+      4: failed
+  - name: cpqHeTemperatureCelsius
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.4
+    type: gauge
+    help: This is the current temperature sensor reading in degrees celsius - 1.3.6.1.4.1.232.6.2.6.8.1.4
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+  - name: cpqHeTemperatureCondition
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.6
+    type: gauge
+    help: The Temperature sensor condition - 1.3.6.1.4.1.232.6.2.6.8.1.6
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: degraded
+      4: failed
+  - name: cpqHeFltTolPowerSupplyCondition
+    oid: 1.3.6.1.4.1.232.6.2.9.3.1.4
+    type: gauge
+    help: The condition of the power supply - 1.3.6.1.4.1.232.6.2.9.3.1.4
+    indexes:
+    - labelname: cpqHeFltTolPowerSupplyChassis
+      type: gauge
+    - labelname: cpqHeFltTolPowerSupplyBay
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      3: degraded
+      4: failed
+  auth:
+    community: public
