@@ -14,9 +14,17 @@ modules:
 
       # Status Group
       - cpqHeMibCondition                 #Overall system health status
+      - cpqHeFltTolPwrSupplyCondition     #power
+      - cpqHeThermalTempStatus            #temp
+      - cpqHeThermalSystemFanStatus       #fan
+      - cpqHeEventLogCondition            #log
 
+      - cpqHeSysBatteryStatus             #battery
+      - cpqHeSysBackupBatteryCondition    #backup battery
 
       # CPU Memory Information Group
+      - cpqSeCpuCondition                 #cpu
+      - cpqHeResilientMemCondition        #memory
       - cpqSeCpuName
       - cpqSeCpuSpeed
       - cpqSeCpuCore
@@ -28,8 +36,12 @@ modules:
       - cpqHeTemperatureCondition         #Temperature status
       - cpqHeTemperatureCelsius           #Temperature
       - cpqHeFltTolFanCondition           #Fan status
+      - cpqHeFltTolFanLocale
+      - cpqHeTemperatureIndex
+      - cpqHeThermalFanStatus
 
       # Disk Status
+      - cpqDaMibCondition                 #Disk array status
       - cpqDaAccelStatus                  #Disk array cache controller status
       - cpqDaAccelBattery                 #Disk array cache controller battery status
       - cpqDaCntlrCondition               #Disk array controller state

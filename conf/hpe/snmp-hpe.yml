@@ -12,7 +12,10 @@ hpe:
   - 1.3.6.1.4.1.232.3.2.5.1.1.57
   - 1.3.6.1.4.1.232.3.2.5.1.1.6
   - 1.3.6.1.4.1.232.6.2.17.2.1.5
+  - 1.3.6.1.4.1.232.6.2.6.6.1.5
+  - 1.3.6.1.4.1.232.6.2.6.7.1.3
   - 1.3.6.1.4.1.232.6.2.6.7.1.9
+  - 1.3.6.1.4.1.232.6.2.6.8.1.2
   - 1.3.6.1.4.1.232.6.2.6.8.1.4
   - 1.3.6.1.4.1.232.6.2.6.8.1.6
   - 1.3.6.1.4.1.232.6.2.9.3.1.4
@@ -306,6 +309,45 @@ hpe:
       2: ok
       3: degraded
       4: failed
+  - name: cpqHeThermalFanStatus
+    oid: 1.3.6.1.4.1.232.6.2.6.6.1.5
+    type: gauge
+    help: This specifies if the fan described is operating properly - 1.3.6.1.4.1.232.6.2.6.6.1.5
+    indexes:
+    - labelname: cpqHeThermalFanIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: ok
+      4: failed
+  - name: cpqHeFltTolFanLocale
+    oid: 1.3.6.1.4.1.232.6.2.6.7.1.3
+    type: gauge
+    help: This specifies the location of the fan in the system. - 1.3.6.1.4.1.232.6.2.6.7.1.3
+    indexes:
+    - labelname: cpqHeFltTolFanChassis
+      type: gauge
+    - labelname: cpqHeFltTolFanIndex
+      type: gauge
+    enum_values:
+      1: other
+      2: unknown
+      3: system
+      4: systemBoard
+      5: ioBoard
+      6: cpu
+      7: memory
+      8: storage
+      9: removableMedia
+      10: powerSupply
+      11: ambient
+      12: chassis
+      13: bridgeCard
+      14: managementBoard
+      15: backplane
+      16: networkSlot
+      17: bladeSlot
+      18: virtual
   - name: cpqHeFltTolFanCondition
     oid: 1.3.6.1.4.1.232.6.2.6.7.1.9
     type: gauge
@@ -320,6 +362,16 @@ hpe:
       2: ok
       3: degraded
       4: failed
+  - name: cpqHeTemperatureIndex
+    oid: 1.3.6.1.4.1.232.6.2.6.8.1.2
+    type: gauge
+    help: A number that uniquely specifies this temperature sensor description. -
+      1.3.6.1.4.1.232.6.2.6.8.1.2
+    indexes:
+    - labelname: cpqHeTemperatureChassis
+      type: gauge
+    - labelname: cpqHeTemperatureIndex
+      type: gauge
   - name: cpqHeTemperatureCelsius
     oid: 1.3.6.1.4.1.232.6.2.6.8.1.4
     type: gauge

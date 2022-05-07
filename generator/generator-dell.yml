@@ -23,9 +23,17 @@ modules:
 
 
       # CPU Memory Information Group
-      - processorDeviceStatusStatus           
-      - processorDeviceStatusReading          
-      - processorDeviceStatusLocationName     
+      - processorDeviceStatus
+      - processorDeviceType
+      - processorDeviceManufacturerName
+      - processorDeviceStatusState
+      - processorDeviceFamily
+      - processorDeviceMaximumSpeed
+      - processorDeviceCurrentSpeed
+      - processorDeviceVersionName
+      - processorDeviceCoreCount
+      - processorDeviceThreadCount
+      - processorDeviceBrandName
 
       - memoryDeviceManufacturerName
       - memoryDeviceStatus                 
